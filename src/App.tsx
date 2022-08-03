@@ -1,9 +1,11 @@
-import React from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import { RouterApp } from './pages/routes';
+import GlobalContext from './context';
 
 export function App() {
   return (
-    <RouterApp/>
+    <GlobalContext>
+      <RouterApp />
+    </GlobalContext>
   );
 }

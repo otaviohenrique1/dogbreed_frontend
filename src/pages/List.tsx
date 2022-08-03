@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Center } from '../components/Center';
@@ -13,7 +12,7 @@ export function List() {
         <ListGroupItemStyled
           action
           onClick={() => {
-            navigate("chihuahua");
+            navigate(`list/${"chihuahua"}`);
           }}
         >Chihuahua</ListGroupItemStyled>
         <ListGroupItemStyled
