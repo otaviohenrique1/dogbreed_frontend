@@ -57,7 +57,7 @@ export function Register() {
                     color="primary"
                     className="mt-2"
                     type="submit"
-                  >Salvar</Button>
+                  >Entrar</Button>
                   <Button
                     color="danger"
                     className="mt-2"

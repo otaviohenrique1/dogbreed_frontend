@@ -13,25 +13,25 @@ export function List() {
         <ListGroupItemStyled
           action
           onClick={() => {
-            navigate("/chihuahua");
+            navigate("chihuahua");
           }}
         >Chihuahua</ListGroupItemStyled>
         <ListGroupItemStyled
           action
           onClick={() => {
-            navigate("/husky");
+            navigate("husky");
           }}
         >Husky</ListGroupItemStyled>
         <ListGroupItemStyled
           action
           onClick={() => {
-            navigate("/labrador");
+            navigate("labrador");
           }}
         >Labrador</ListGroupItemStyled>
         <ListGroupItemStyled
           action
           onClick={() => {
-            navigate("/pug");
+            navigate("pug");
           }}
         >Pug</ListGroupItemStyled>
       </ListGroupStyled>
