@@ -1,8 +1,8 @@
 import React from 'react';
 import { Center } from '../components/Center';
 import { useNavigate } from "react-router-dom";
-import { FormUser } from '../components/Form';
 import { FormUserTypes } from '../types/types';
+import { FormUser } from '../components/Form';
 // import { api } from '../utils/api';
 
 export function Register() {
