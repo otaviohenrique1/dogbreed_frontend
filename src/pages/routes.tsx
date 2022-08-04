@@ -18,9 +18,6 @@ export function RouterApp() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Register />} />
-
-        {/* <Route path="list" element={<List />} /> */}
-        {/* <Route path="list/:breed" element={<Breed />} /> */}
         <Route
           path="list"
           element={
