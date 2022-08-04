@@ -1,16 +1,12 @@
 import { createContext, Dispatch,  ReactNode, SetStateAction, useState } from "react";
 
-export interface UserData {
-  userToken: string;
-}
-
 interface UserContextProps {
-  dataUserContext: UserData[];
-  setDataUserContext: Dispatch<SetStateAction<UserData[]>>
+  dataUserContext: string;
+  setDataUserContext: Dispatch<SetStateAction<string>>
 }
 
 const initialValuesUserContext = {
-  dataUserContext: [],
+  dataUserContext: "",
   setDataUserContext: () => {},
 };
 
@@ -21,7 +17,7 @@ interface UserContextProviderProps {
 }
 
 export function UserContextProvider(props: UserContextProviderProps) {
-  const [dataUserContext, setDataUserContext] = useState<UserData[]>(initialValuesUserContext.dataUserContext);
+  const [dataUserContext, setDataUserContext] = useState<string>(initialValuesUserContext.dataUserContext);
 
   return (
     <UserContextContext.Provider value={{ dataUserContext: dataUserContext, setDataUserContext: setDataUserContext }}>

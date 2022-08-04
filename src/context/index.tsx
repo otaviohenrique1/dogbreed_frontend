@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { UserContextProvider } from "./carrinho/index";
+import { UserContextProvider } from "./userToken/index";
 
 interface GlobalContextProps {
   children: ReactNode;

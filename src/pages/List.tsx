@@ -2,37 +2,23 @@ import { useNavigate } from 'react-router-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Center } from '../components/Center';
 import styled from 'styled-components';
+import { toUpperCaseFirstLetter } from '../utils/utils';
 
 export function List() {
   const navigate = useNavigate();
 
+  const MenuList = ["chihuahua", "husky", "pug", "labrador"];
+
   return (
     <Center>
       <ListGroupStyled>
-        <ListGroupItemStyled
-          action
-          onClick={() => {
-            navigate(`list/${"chihuahua"}`);
-          }}
-        >Chihuahua</ListGroupItemStyled>
-        <ListGroupItemStyled
-          action
-          onClick={() => {
-            navigate("husky");
-          }}
-        >Husky</ListGroupItemStyled>
-        <ListGroupItemStyled
-          action
-          onClick={() => {
-            navigate("labrador");
-          }}
-        >Labrador</ListGroupItemStyled>
-        <ListGroupItemStyled
-          action
-          onClick={() => {
-            navigate("pug");
-          }}
-        >Pug</ListGroupItemStyled>
+        {MenuList.map((item, index) => (
+          <ListGroupItemStyled
+            key={index}
+            action
+            onClick={() => navigate(`${item}`)}
+          >{toUpperCaseFirstLetter(item)}</ListGroupItemStyled>
+        ))}
       </ListGroupStyled>
     </Center>
   )
@@ -40,6 +26,13 @@ export function List() {
 
 const ListGroupItemStyled = styled(ListGroupItem)`
   cursor: pointer;
+  &:hover {
+    background-color: aliceblue;
+  }
+
+  &:active {
+    background-color: #99cfff;
+  }
 `;
 
 const ListGroupStyled = styled(ListGroup)`
