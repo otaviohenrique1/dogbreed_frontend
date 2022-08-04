@@ -11,7 +11,8 @@ export function List() {
   const MenuList = ["chihuahua", "husky", "pug", "labrador"];
 
   return (
-    <Center>
+    <Center className="d-flex flex-column">
+      <h1 className="mb-3">Raças de Cachorros</h1>
       <ListGroupStyled>
         {(MenuList.length === 0) ? <SpinnerLoader /> : <>
           {MenuList.map((item, index) => (
@@ -40,4 +41,5 @@ const ListGroupItemStyled = styled(ListGroupItem)`
 
 const ListGroupStyled = styled(ListGroup)`
   width: 300px;
+  text-align: center;
 `;
