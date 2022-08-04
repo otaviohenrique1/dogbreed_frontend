@@ -1,15 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Col, Container, Row } from 'reactstrap';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { UserContextContext } from '../context/userToken';
 import styled from 'styled-components';
-import { ButtonLogout } from "../components/Button";
+import { Button, ButtonLogout } from "../components/Button";
 import { SpinnerLoader } from "../components/LoaderSpinner";
 import { Center } from "../components/Center";
 import { api } from '../utils/api';
 import { toUpperCaseFirstLetter } from "../utils/utils";
+import { MdArrowBack } from 'react-icons/md';
 
 interface DogBreedDataType {
   breed: string;
@@ -25,6 +26,8 @@ export function Breed() {
   const { breed } = useParams();
   const { dataUserContext } = useContext(UserContextContext);
   const [dataDogBreedList, setDataDogBreedList] = useState<DogBreedDataType>(initialValues);
+  const navigation = useNavigate();
+
   const ModalSwal = withReactContent(Swal)
 
   useEffect(() => {
@@ -48,7 +51,15 @@ export function Breed() {
           ? <SpinnerLoader />
           : <>
             <Col md={12} className="d-flex justify-content-between mb-3">
-              <h1>{dataDogBreedList.breed}</h1>
+              <h1 className="d-flex align-items-center">
+                <Button
+                  color="link"
+                  className="me-2"
+                  onClick={() => navigation("/list")}
+                >
+                  <MdArrowBack size={30} />
+                </Button>
+                {dataDogBreedList.breed}</h1>
               <ButtonLogout />
             </Col>
             {dataDogBreedList.list.map((item, index) => (
