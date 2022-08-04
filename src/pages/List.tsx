@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Center } from '../components/Center';
 import styled from 'styled-components';
 import { toUpperCaseFirstLetter } from '../utils/utils';
+import { SpinnerLoader } from '../components/LoaderSpinner';
 
 export function List() {
   const navigate = useNavigate();
@@ -12,13 +13,15 @@ export function List() {
   return (
     <Center>
       <ListGroupStyled>
-        {MenuList.map((item, index) => (
-          <ListGroupItemStyled
-            key={index}
-            action
-            onClick={() => navigate(`${item}`)}
-          >{toUpperCaseFirstLetter(item)}</ListGroupItemStyled>
-        ))}
+        {(MenuList.length === 0) ? <SpinnerLoader /> : <>
+          {MenuList.map((item, index) => (
+            <ListGroupItemStyled
+              key={index}
+              action
+              onClick={() => navigate(`${item}`)}
+            >{toUpperCaseFirstLetter(item)}</ListGroupItemStyled>
+          ))}
+        </>}
       </ListGroupStyled>
     </Center>
   )

@@ -5,6 +5,7 @@ import { UserContextContext } from '../context/userToken';
 import { Col, Container, Row } from 'reactstrap';
 import styled from 'styled-components';
 import { toUpperCaseFirstLetter } from "../utils/utils";
+import { SpinnerLoader } from "../components/LoaderSpinner";
 
 interface DogBreedDataType {
   breed: string;
@@ -39,7 +40,7 @@ export function Breed() {
     <Container>
       <h1>{dataDogBreedList.breed}</h1>
       <Row>
-        {dataDogBreedList.list.map((item, index) => (
+        {(dataDogBreedList.list.length === 0) ? <SpinnerLoader /> : dataDogBreedList.list.map((item, index) => (
           <Col key={index} className="mb-2">
             <Img src={item} alt={`Imagem_${index}`} />
           </Col>
