@@ -25,10 +25,12 @@ export function FormUser(props: FormUserProps) {
           <Form className="d-flex flex-column">
             <Input
               name="email"
+              id="email"
               value={values.email}
               placeholder="E-mail"
               type="email"
               className={`form-control ${(errors.email && touched.email) ? "rounded-0 rounded-top" : ""}`}
+              data-testid="email"
             />
             <ErrorMessage
               name="email"
@@ -37,9 +39,11 @@ export function FormUser(props: FormUserProps) {
             />
             <ButtonGroup>
               <Button
+                id="submit_form_button"
                 color="primary"
                 className="mt-2"
                 type="submit"
+                data-testid="submit_form_button"
               >Entrar</Button>
               <Button
                 color="danger"

@@ -11,9 +11,13 @@ export function Register() {
   const navigate = useNavigate();
 
   function handleSubmit(values: FormUserTypes) {
+    // alert(values.email);
     api.post("register", { email: values.email })
       .then((data) => {
+        console.log(data);
+        // console.log(data.data.user.token);
         setDataUserContext(data.data.user.token);
+
         navigate('list');
       })
       .catch((error) => {
