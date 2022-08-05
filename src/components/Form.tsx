@@ -2,8 +2,8 @@ import { Formik, Form, FormikProps, ErrorMessage } from "formik";
 import { Input } from '../components/FormInput';
 import { Button } from '../components/Button';
 import { ButtonGroup } from 'reactstrap';
-import { FormUserTypes } from '../types/types';
-import { initialValues, validationSchema } from '../types/constants';
+import { FormUserTypes } from '../utils/types';
+import { initialValues, validationSchema } from '../utils/constants';
 
 export interface FormUserProps {
   handleSubmit: (values: FormUserTypes) => void;
